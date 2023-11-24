@@ -1,12 +1,17 @@
 package jm.task.core.jdbc;
 
+import com.mysql.cj.MysqlConnection;
+import jm.task.core.jdbc.dao.UserDaoJDBCImpl;
 import jm.task.core.jdbc.model.User;
 import jm.task.core.jdbc.service.UserService;
 import jm.task.core.jdbc.service.UserServiceImpl;
 
 import java.sql.Connection;
+import java.sql.Driver;
+import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.List;
+
 
 public class Main {
     public static void main(String[] args) throws SQLException {
@@ -22,6 +27,8 @@ public class Main {
         for (User user: users) {
             System.out.println(user);
         }
+        userService.removeUserById(1);
+        userService.getAllUsers();
         userService.cleanUsersTable();
         userService.dropUsersTable();
     }

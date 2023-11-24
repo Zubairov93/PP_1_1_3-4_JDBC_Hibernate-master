@@ -23,6 +23,7 @@ public class Util {
                    if(useConnection == null){
                        connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
                        useConnection = connection;
+                       System.out.println("Соединение произошло");
                    }
                }
            }
